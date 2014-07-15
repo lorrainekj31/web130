@@ -1,0 +1,111 @@
+/*MainIndexLess*/
+@import "imports.less";
+
+/*** Mixins ***/
+.mainSection {
+border:@standardBorder;
+padding:@standardPadding;
+}
+
+.border-box{
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.specialRound {
+  -webkit-border-radius:@roundedCorners;
+  -moz-border-radius:@roundedCorners;
+  border-radius:@roundedCorners;
+}
+
+.box-shadow{
+  box-shadow: @boxShadow;
+  -webkit-box-shadow: @boxShadow;
+  -moz-box-shadow: @boxShadow;
+}
+
+/*** Standard */
+h1 {
+color:@mainColor;
+}
+
+header {
+  .specialRound;
+  .mainSection;
+  .box-shadow;
+  background:darken(@mainBack, 10%);
+
+}
+/*naviation styles*/
+
+#main-menu{
+  ul{
+    list-style-type: none;
+    padding-left: 20px;
+    position: relative;
+    
+      li{
+        text-align: left;
+        font-size: 1.25em;
+        
+        a{
+           background: lighten(@aBackground, 40%);
+           color: #000000;
+           text-decoration: none;
+           padding: 10px 20px;
+           margin: 5px 0px;
+           display: block;
+           width: 200px;
+          
+           &:hover{
+              background: @aBackground;
+              color: black;
+             
+             &:visited{
+                 color: orange;
+               }
+            }
+        }
+    }
+  }
+}
+
+footer {
+  .mainSection;
+   clear: both;
+}
+
+h2 {
+  color:lighten(@mainColor, 20%);
+}
+
+#main {
+  float: left;
+  width: 56%;
+  background: @mainBack;
+  padding:@funPadding + 20 @funPadding;
+  .specialRound;
+  height: 400px;
+  .border-box;
+  .box-shadow;
+  margin: @margin;
+}
+
+#side{
+  float: right;
+  width: 40%;
+  background: lighten(@asideBack, 20%);
+  padding:@funPadding + 20 @funPadding;
+  .specialRound;
+  .border-box;
+  .box-shadow;
+   margin: @margin;
+}
+
+ img{
+   max-width: 80%;
+   margin: 0 auto;
+   height: auto;
+   display: block;
+ }
