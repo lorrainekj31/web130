@@ -95,3 +95,24 @@ a{
   top: 0;
 }
 
+@media screen and (max-width: 800px) {
+  .nav > li {
+    float: none;
+  }
+  .nav ul {
+    display: block;
+    width: 100%;
+  }
+  .nav > li.hover > ul, .nav li li.hover ul {
+    position: static;
+  }
+}
+
+
+
+
+
+
+
+
+
