@@ -4,10 +4,10 @@ body, nav, ul, li, a {
 }
 
 body {
- font-family: sans-serif;
+  font-family: sans-serif;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
@@ -18,7 +18,7 @@ a{
 }
 
 .toggleMenu {
-  /*display: none;*/
+  display: none;
   background: #666;
   padding: 10px 15px;
   color: #fff;
@@ -36,8 +36,8 @@ a{
   display: table;
 }
 
-.nav:after{
-  clear:both;
+.nav:after {
+  clear: both;
 }
 
 .nav ul {
@@ -59,7 +59,6 @@ a{
 
 .nav > li > a {
   display: block;
-  
 }
 
 .nav li ul {
@@ -68,7 +67,7 @@ a{
   z-index: 100;
 }
 
-.nav li li a{
+.nav li li a {
   display: block;
   background: #1d7a62;
   position: relative;
@@ -82,7 +81,7 @@ a{
   border-top: 1px solid #1d7a62;
 }
 
-.nav li{
+.nav li {
   position: relative;
 }
 
@@ -107,6 +106,15 @@ a{
     position: static;
   }
 }
+
+
+
+
+
+
+
+
+
 
 
 
