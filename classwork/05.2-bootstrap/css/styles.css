@@ -1,0 +1,9 @@
+footer{
+  max-width: 98%;
+    padding: 1%;
+    margin: 4%;
+    border: solid 1px black;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
