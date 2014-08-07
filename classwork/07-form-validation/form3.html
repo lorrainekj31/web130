@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>form 3 - validation</title>
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- <script src="js/jquery-2.1.1.min.js"></script> -->
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+  <style type="text/css">
+       .error{
+        color: red;
+      }
+    .hidden{
+      display:none;
+    }
+  </style>
+  <script type="text/javascript">
+     window.onload = function() {
+        document.getElementById("contactForm").onsubmit = validateForm
+  }
+    function validateForm() {
+     var fname = document.getElementById("first-name").value;
+     var errorSpan = document.getElementById("error-first-name");
+      
+      if(fname === "") {
+        //show error and stay
+        errorSpan.className = "error";
+        return false;
+      } else {
+        //hide error and success
+        errorSpan.classname = "hidden";
+        return true;
+      }        
+    }
+       
+  </script>
+</head>
+  <body>
+    <form id="contactForm" action="success.html">
+      <p>
+        <label for="first-name">First Name:</label>
+        <input type="text" name="first-name" id="first-name">
+        <span id="error-first-name" class="hidden">* Blank</span>
+      </p>
+      
+      <p>
+        <label for="last-name">Last Name:</label>
+        <input type="text" name="last-name" id="last-name">
+         <span id="error-last-name" class="hidden">* Blank</span>
+      </p>
+      
+      <p>
+        <label for="phone">Phone:</label>
+        <input type="text" name="phone" id="phone">
+         <span id="error-phone" class="hidden">* Blank</span>
+      </p>
+      
+      <p>
+        <label for="terms">
+          <input type="checkbox" it="terms" name="terms">I Agree
+           <span id="error-checkbox" class="hidden">* blank</span>
+        </label>
+      </p>
+      
+        <button name="submit" type="submit">Submit</button>
+  </form>
+</body>
+</html>
