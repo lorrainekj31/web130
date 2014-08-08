@@ -26,7 +26,7 @@
       var validFirstName = validateTextField("first-name","error-first-name");
       var validLastName = validateTextField("last-name","error-last-name");
       var validPhone = validateTextField("phone","error-phone");
-      var validTerms = validateCheckbox();
+      var validTerms = validateCheckbox("terms","error-checkbox");
       
       return validFirstName && validLastName && validPhone && validTerms;
     }
@@ -49,10 +49,10 @@
     }
     
     
-    function validateCheckbox() {
+    function validateCheckbox(fieldId, errorId) {
       //take a parametir and test any
-     var checkbox = document.getElementById("terms");
-     var errorSpan = document.getElementById("error-checkbox");
+     var checkbox = document.getElementById(fieldId);
+     var errorSpan = document.getElementById(errorId);
    
       if(!checkbox.checked) {
         //show error and stay
