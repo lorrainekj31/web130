@@ -16,15 +16,45 @@
       display:none;
     }
   </style>
+  
   <script type="text/javascript">
      window.onload = function() {
-        document.getElementById("contactForm").onsubmit = validateForm
+        document.getElementById("contactForm").onsubmit = validateForm;
   }
+     
     function validateForm() {
-     var fname = document.getElementById("first-name").value;
-     var errorSpan = document.getElementById("error-first-name");
+      var validFirstName = validateTextField("first-name","error-first-name");
+      var validLastName = validateTextField("last-name","error-last-name");
+      var validPhone = validateTextField("phone","error-phone");
+      var validTerms = validateCheckbox();
       
-      if(fname === "") {
+      return validFirstName && validLastName && validPhone && validTerms;
+    }
+    
+    function validateTextField(fieldId, errorId) {
+      //take a parametir and test any
+     var fieldText = document.getElementById(fieldId).value;
+     var errorSpan = document.getElementById(errorId);
+      
+   
+      if(fieldText === "") {
+        //show error and stay
+        errorSpan.className = "error";
+        return false;
+      } else {
+        //hide error and success
+        errorSpan.classname = "hidden";
+        return true;
+      }        
+    }
+    
+    
+    function validateCheckbox() {
+      //take a parametir and test any
+     var checkbox = document.getElementById("terms");
+     var errorSpan = document.getElementById("error-checkbox");
+   
+      if(!checkbox.checked) {
         //show error and stay
         errorSpan.className = "error";
         return false;
@@ -59,7 +89,7 @@
       
       <p>
         <label for="terms">
-          <input type="checkbox" it="terms" name="terms">I Agree
+          <input type="checkbox" id="terms" name="terms">I Agree
            <span id="error-checkbox" class="hidden">* blank</span>
         </label>
       </p>
