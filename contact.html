@@ -5,6 +5,8 @@
      <link rel="stylesheet/less" href="css/styles.less">
     <script src="js/less-1.7.3.min.js"></script>    
 	  <script src="js/scripts.js"></script>
+     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/parsley.min.js"></script>
   </head>
   <body>
     <header>
@@ -18,16 +20,65 @@
       </nav> 
       </header> 
     <div id="main">
-		<form>
-		<p>Want to contact us? just enter your question and click the button</p>
-		<p>Your email: <input type="email" name="email"></p><!--this would be a required field-->
-		<p>Talk to me:<textarea name="comment" form="userform"></textarea></p>
-		<p><button type="button" id="button" onclick="getName()">Click Me!</button></p>
+		
+      
+ <form action="success.html" id="contact-form" data-parsley-validate>
+   <p>
+     <label for="first-name">First Name: </label>
+       <input type="text" name="first-name" id="first-name" data-parsley-required>     
+   </p>
+    <p>
+     <label for="last-name">Last Name: </label>
+       <input type="text" name="last-name" id="last-name" data-parsley-required>
+   </p>
+   <p>
+     <label for="street-address">Street Adress: </label>
+       <input type="text" name="street-address" id="street-address" data-parsley-required>
+   </p>
+   What city do you live in?
+   <select data-parsley-required>
+     <option value="">Select one</option>
+      <option value="Seattle">Seattle</option>
+      <option value="Bellevue">Bellevue</option>
+      <option value="Renton">Renton</option>
+      <option value="Tacoma">Tacoma</option>
+      <option value="Other">Other</option>
+</select> 
+   
+   <p>
+     <label for="zip">Zip code: </label>
+       <input type="text" name="zip" id="zip" data-parsley-type="digits" data-parsley-length="[5,5]" data-parsley-required>     
+   </p>
+   <p>
+     <label for="email">email: </label>
+       <input type="email" name="email" id="email" data-parsley-trigger="change" data-parsley-type="email"/ data-parsley-required>
+   </p> 
+   <p>
+     <label for="email">email: </label>
+       <input type="email" name="email2" id="email2" data-parsley-trigger="change" data-parsley-type="email" data-parsley-equalto="#email"/ data-parsley-required>
+   </p>
+   <p>
+     What languages do you speak?:<br>
+     <input type="checkbox" name="language" value="English" data-parsley-required="true" data-parsley-mincheck="1">English<br>
+     <input type="checkbox" name="language" value="French">French<br>
+     <input type="checkbox" name="language" value="Spanish">Spanish<br>
+     <input type="checkbox" name="language" value="Other">Other<br>
+                                                                  
+   </p>
+   <p>
+   do you own a car?<br>
+     <input type="radio" name="answer" value="yes" data-parsley-required="true">Yes<br>
+     <input type="radio" name="answer" value="no">No<br>
+   </p>
+   <button type="submit" name="submit" id="submit" value="submit">Submit</button>
 
-		</form>
+</form>
+
+      
+      
 	</div>
 <footer>
-  <p>copyright Lorraine Janzen/Forrest McIntyre</p>
+  <p>copyright Lorraine Janzen</p>
 </footer>
 </body>
 </html>

@@ -14,7 +14,7 @@ header{
   width: 58%;
   padding: 1%;
   margin: 1%;
-  height: 400px;
+  overflow: hidden;
   float: left;
   background-color: #F0F8FF;
   box-sizing: border-box;
